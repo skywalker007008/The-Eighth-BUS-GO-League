@@ -24,3 +24,10 @@
 
       + [getName.py](getName.py)
       + [date.py](date.py)
+
++ 2019.4.4
+
+   - 添加队员名单
+   
+   - 更新联赛赛程信息
+   
