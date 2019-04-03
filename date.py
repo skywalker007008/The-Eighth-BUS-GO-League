@@ -17,17 +17,20 @@ def readSheetList(path) :
 	return sheet
 
 def readOneMatch(sheet, matchOrder, pathout) :
-	startLine = (matchOrder - 1) * 2
+	startLine = (matchOrder) * 2
 	readLineNum = 2
 	firstRow = 2
 	lastRow = 6
 
 	for i in range(firstRow - 1, lastRow) :
 		row = sheet.row_values(i)
+		print(row)
 		pathout.write("+ ")
 		team1 = row[startLine]
+		
 		pathout.write(team1 + "&emsp;vs&emsp;")
 		team2 = row[startLine + 1]
+		
 		pathout.write(team2 + "\n")
 
 def readMatchList(sheet, pathout) :
