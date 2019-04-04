@@ -5,8 +5,7 @@ import sys
 def getPath() :
 	pydir = sys.argv[0]
 	rootdir = pydir[:(len(pydir) - 11)]
-	finaldir = rootdir + '.\\队员信息'
-	return finaldir
+	return rootdir
 
 def groupbyBehind(rootdir, behind) :
 	list = os.listdir(rootdir)
@@ -70,14 +69,14 @@ def main() :
 	filePath = ".\\队员信息\\"
 	path = getPath()
 	elsList = groupbyBehind(path, ".xlsx")
-	out = open(".\\队员信息\\nameList.md", "w+", encoding = "utf-8")
-	out1 = open(filePath + "甲组名单.md", "w+", encoding = "utf-8")
+	# out = open(".\\队员信息\\nameList.md", "w+", encoding = "utf-8")
+	out1 = open("groupA.md", "w+", encoding = "utf-8")
 	# out2 = open(filePath + "乙组名单.md")
 	# out3 = open(filePath + "丙组名单.md")
 	for file in elsList :
 		if file.startswith("甲组") :
 			out1.write("# **甲组**\n")
-			genGroupDataInOneSheet(filePath + file, out1)
+			genGroupDataInOneSheet(file, out1)
 			out1.close()
 		# elif file.startswith("乙组") :
 		# 	genGroupDataInOneSheet(file, out2)

@@ -18,9 +18,14 @@
 
 ## **各组赛程**
 
-+ 甲组：[md版本](联赛赛程-甲组.md)
-+ 乙组：[md版本](联赛赛程-乙组.md)
-+ 丙组：[md版本](联赛赛程-丙组.md)
++ [甲组](groupA.html)
+
++ [乙组](groupB.html)
+
++ [丙组](groupC.html)
+
+>> **<p align="middle"> [返回主页](../../index.html) </p>**
+
 
 
 

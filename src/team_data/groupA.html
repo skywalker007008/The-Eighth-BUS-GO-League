@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>甲组名单</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///e%3A/%E5%8C%97%E8%88%AA%E5%9B%B4%E6%A3%8B%E7%A4%BE/markdown-pdf_css-master/markdown.css" type="text/css">
+</head>
+<body>
+<h1 id="%E7%94%B2%E7%BB%84"><strong>甲组</strong></h1>
+<h3 id="%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6"><strong>清华大学</strong></h3>
+<ul>
+<li>领队： 蔡韫睿</li>
+<li>微信： cmb731219cyr000915</li>
+<li>电话： 18952548579</li>
+<li>邮箱： caiyr@163.com</li>
+<li>QQ ： 282301400</li>
+</ul>
+<h4 id="%E9%98%9F%E5%91%98%E5%90%8D%E5%8D%95%E2%80%94%E2%80%94"><strong>队员名单——</strong></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">姓名</th>
+<th style="text-align:center">性别</th>
+<th style="text-align:center">年级</th>
+<th style="text-align:center">棋力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">刘正源</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大四</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">刘欣源</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大四</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">黎天浩</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大四</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">宋容慧</td>
+<td style="text-align:center">女</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">成西蒙</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">马泽宇</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">杨铭朗</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">江维杰</td>
+<td style="text-align:center">女</td>
+<td style="text-align:center">大二</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">曾博深</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大二</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">卫景燊</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大二</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">周天予</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大二</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">张思源</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">蔡韫睿</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">郭羽扬</td>
+<td style="text-align:center">女</td>
+<td style="text-align:center">大一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">邸启威</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">张思源</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">许佳楠</td>
+<td style="text-align:center">女</td>
+<td style="text-align:center">研一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">闫自飞</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">博二</td>
+<td style="text-align:center">5段</td>
+</tr>
+</tbody>
+</table>
+<h3 id="%E5%8C%97%E4%BA%AC%E8%88%AA%E7%A9%BA%E8%88%AA%E5%A4%A9%E5%A4%A7%E5%AD%A6"><strong>北京航空航天大学</strong></h3>
+<ul>
+<li>领队： 刘子豪</li>
+<li>微信： lzhdy007</li>
+<li>电话： 15652579773</li>
+<li>邮箱： 302772664@qq.com</li>
+<li>QQ ： 302772664</li>
+</ul>
+<h4 id="%E9%98%9F%E5%91%98%E5%90%8D%E5%8D%95%E2%80%94%E2%80%94"><strong>队员名单——</strong></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">姓名</th>
+<th style="text-align:center">性别</th>
+<th style="text-align:center">年级</th>
+<th style="text-align:center">棋力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">刘子豪</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">钟天健</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大二</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">聂嘉辰</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大二</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">曹轩豪</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大二</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">俞乐航</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">王星翰</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">黄为豪</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">张文浩</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大四</td>
+<td style="text-align:center">5段</td>
+</tr>
+</tbody>
+</table>
+<h3 id="%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6"><strong>北京大学</strong></h3>
+<ul>
+<li>领队： 屈波</li>
+<li>微信： qb844532563</li>
+<li>电话： 18813078803</li>
+<li>邮箱： 844532563@qq.com</li>
+<li>QQ ： 844532563</li>
+</ul>
+<h4 id="%E9%98%9F%E5%91%98%E5%90%8D%E5%8D%95%E2%80%94%E2%80%94"><strong>队员名单——</strong></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">姓名</th>
+<th style="text-align:center">性别</th>
+<th style="text-align:center">年级</th>
+<th style="text-align:center">棋力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">屈波</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大二</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">耿景行</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">杜惟康</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">申沁恺</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大四</td>
+<td style="text-align:center">4段</td>
+</tr>
+<tr>
+<td style="text-align:center">秦潇</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">研一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">乔丹</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大二</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">江祎烨</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">黄嘉乐</td>
+<td style="text-align:center">女</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">张文阳</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大四</td>
+<td style="text-align:center">5段</td>
+</tr>
+</tbody>
+</table>
+<h3 id="%E5%86%9C%E5%A4%A7%EF%BC%86%E8%B4%B8%E5%A4%A7%E8%81%94%E9%98%9F"><strong>农大＆贸大联队</strong></h3>
+<ul>
+<li>领队： 潘有恒</li>
+<li>微信： Sai8677</li>
+<li>电话： 15123288658</li>
+<li>邮箱： 420206503@qq.com</li>
+<li>QQ ： 420206503</li>
+</ul>
+<h4 id="%E9%98%9F%E5%91%98%E5%90%8D%E5%8D%95%E2%80%94%E2%80%94"><strong>队员名单——</strong></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">姓名</th>
+<th style="text-align:center">性别</th>
+<th style="text-align:center">年级</th>
+<th style="text-align:center">棋力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">许泽宇</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">校友</td>
+<td style="text-align:center">7段</td>
+</tr>
+<tr>
+<td style="text-align:center">庄聪雅</td>
+<td style="text-align:center">女</td>
+<td style="text-align:center">校友</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">范悦滢</td>
+<td style="text-align:center">女</td>
+<td style="text-align:center">校友</td>
+<td style="text-align:center">4段</td>
+</tr>
+<tr>
+<td style="text-align:center">白宜冬</td>
+<td style="text-align:center">女</td>
+<td style="text-align:center">大四</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">刘畅</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">校友</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">黄馨仪</td>
+<td style="text-align:center">女</td>
+<td style="text-align:center">校友</td>
+<td style="text-align:center">3段</td>
+</tr>
+<tr>
+<td style="text-align:center">张兴宇</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">研二</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">刘诗豪</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">研三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">丁隆臻</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">研二</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">金宗源</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">研一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">田子良</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大四</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">王珏翔</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大四</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">陈子真</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大四</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">李有康</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大四</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">梅一涵</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">汤问</td>
+<td style="text-align:center">女</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">龙熙来</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大二</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">潘有恒</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大二</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">张墨飞</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">教师</td>
+<td style="text-align:center">5段</td>
+</tr>
+</tbody>
+</table>
+<h3 id="%E4%B8%AD%E5%9B%BD%E7%A7%91%E5%AD%A6%E9%99%A2%E5%A4%A7%E5%AD%A6"><strong>中国科学院大学</strong></h3>
+<ul>
+<li>领队： 张泽华</li>
+<li>微信： zhangzehua483111</li>
+<li>电话： 13691045073</li>
+<li>邮箱： 1574409140@qq.com</li>
+<li>QQ ： 1574409140</li>
+</ul>
+<h4 id="%E9%98%9F%E5%91%98%E5%90%8D%E5%8D%95%E2%80%94%E2%80%94"><strong>队员名单——</strong></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">姓名</th>
+<th style="text-align:center">性别</th>
+<th style="text-align:center">年级</th>
+<th style="text-align:center">棋力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">张泽华</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大二</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">叶翰飞</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大四</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">吴鹏飞</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">博一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">王晓丰</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">研三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">杨开逸</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大二</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">徐俊超</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">研二</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">顾卓然</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">研一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">田哲帅（外援）</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">林川清</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">研一</td>
+<td style="text-align:center">4段</td>
+</tr>
+<tr>
+<td style="text-align:center">李桓</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">校友（毕业一年）</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">胡瑞林</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">4段</td>
+</tr>
+<tr>
+<td style="text-align:center">李北平</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大一</td>
+<td style="text-align:center">5段</td>
+</tr>
+</tbody>
+</table>
+<h3 id="%E5%8F%8C%E5%B7%A5%E8%81%94%E9%98%9F"><strong>双工联队</strong></h3>
+<ul>
+<li>领队： 徐华兴</li>
+<li>微信： 13815802059</li>
+<li>电话： 18811656212</li>
+<li>邮箱： xhx19980806@126.com</li>
+<li>QQ ： 2315767041</li>
+</ul>
+<h4 id="%E9%98%9F%E5%91%98%E5%90%8D%E5%8D%95%E2%80%94%E2%80%94"><strong>队员名单——</strong></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">姓名</th>
+<th style="text-align:center">性别</th>
+<th style="text-align:center">年级</th>
+<th style="text-align:center">棋力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">徐华兴</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">崔涵</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">研一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">江尚烨</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">王星霖</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">赵轩毅</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大一</td>
+<td style="text-align:center">4段</td>
+</tr>
+<tr>
+<td style="text-align:center">徐柏麟</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大二</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">胡展铭</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大二</td>
+<td style="text-align:center">5段</td>
+</tr>
+</tbody>
+</table>
+<h3 id="%E5%8C%97%E4%BA%AC%E5%8C%96%E5%B7%A5%E5%A4%A7%E5%AD%A6"><strong>北京化工大学</strong></h3>
+<ul>
+<li>领队： 季寅鹏</li>
+<li>微信： czzzhhh</li>
+<li>电话： 18018359079</li>
+<li>邮箱： 296995179@qq。com</li>
+<li>QQ ： 296995179</li>
+</ul>
+<h4 id="%E9%98%9F%E5%91%98%E5%90%8D%E5%8D%95%E2%80%94%E2%80%94"><strong>队员名单——</strong></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">姓名</th>
+<th style="text-align:center">性别</th>
+<th style="text-align:center">年级</th>
+<th style="text-align:center">棋力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">杨曜岭</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">张睿超</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">赵新宇</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">王博尧</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">研一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">季寅鹏</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大二</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">申贺元</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">艾江东</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">校友（2017）</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">吴胤南（外援）</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">陈叶伟</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大四</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">邢津瑞</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大四</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">张天辰</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+</tbody>
+</table>
+<h3 id="%E9%A6%96%E9%83%BD%E7%BB%8F%E6%B5%8E%E8%B4%B8%E6%98%93%E5%A4%A7%E5%AD%A6"><strong>首都经济贸易大学</strong></h3>
+<ul>
+<li>领队： 陈天朗</li>
+<li>微信： 18600794350</li>
+<li>电话： 18600794350</li>
+<li>邮箱： 1139779208@qq.com</li>
+<li>QQ ： 1139779208</li>
+</ul>
+<h4 id="%E9%98%9F%E5%91%98%E5%90%8D%E5%8D%95%E2%80%94%E2%80%94"><strong>队员名单——</strong></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">姓名</th>
+<th style="text-align:center">性别</th>
+<th style="text-align:center">年级</th>
+<th style="text-align:center">棋力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">陈天朗</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大二</td>
+<td style="text-align:center">3段</td>
+</tr>
+<tr>
+<td style="text-align:center">顾家辉（外援）</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大二</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">陈牧昆</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大四</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">刘伯寅</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">刘潇</td>
+<td style="text-align:center">女</td>
+<td style="text-align:center">大一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">邰德昆</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大一</td>
+<td style="text-align:center">四段</td>
+</tr>
+</tbody>
+</table>
+<h3 id="%E5%8C%97%E4%BA%AC%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6"><strong>北京交通大学</strong></h3>
+<ul>
+<li>领队： 黄作铭</li>
+<li>微信： 18809812110</li>
+<li>电话： 18810435869</li>
+<li>邮箱： 71476564@qq.com</li>
+<li>QQ ： 714726564</li>
+</ul>
+<h4 id="%E9%98%9F%E5%91%98%E5%90%8D%E5%8D%95%E2%80%94%E2%80%94"><strong>队员名单——</strong></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">姓名</th>
+<th style="text-align:center">性别</th>
+<th style="text-align:center">年级</th>
+<th style="text-align:center">棋力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">汤治行</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">陈思旷（外援）</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">武立言</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">郭林峰</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大三</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">彭聪</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大四</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">黄作铭</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大二</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">胡修宇</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大二</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">周毓哲</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">刘晗钊</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">大一</td>
+<td style="text-align:center">5段</td>
+</tr>
+<tr>
+<td style="text-align:center">王霄键</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">2012年毕业</td>
+<td style="text-align:center">5段</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<blockquote>
+<p><strong><p align="middle"> <a href="../../index.html">返回主页</a> </p></strong></p>
+</blockquote>
+</blockquote>
+
+</body>
+</html>

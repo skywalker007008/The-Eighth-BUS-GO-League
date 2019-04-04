@@ -62,3 +62,4 @@
 + 北理＆北工&emsp;vs&emsp;北航
 + 清华&emsp;vs&emsp;首经贸
 
+>> **<p align="middle"> [返回赛程首页](time.html)&emsp;&emsp;&emsp;[返回主页](../../index.html) </p>**

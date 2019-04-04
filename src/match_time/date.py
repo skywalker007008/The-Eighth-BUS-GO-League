@@ -42,11 +42,12 @@ def readMatchList(sheet, pathout) :
 def main() :
 	path = "联赛赛程.xls"
 	sheetList = readSheetList(path)
-	pathout1 = open("联赛赛程-甲组.md", "w+", encoding = 'UTF-8')
-	pathout2 = open("联赛赛程-乙组.md", "w+", encoding = 'UTF-8')
-	pathout3 = open("联赛赛程-丙组.md", "w+", encoding = 'UTF-8')
+	pathout1 = open("groupA.md", "w+", encoding = 'UTF-8')
+	pathout2 = open("groupB.md", "w+", encoding = 'UTF-8')
+	pathout3 = open("groupC.md", "w+", encoding = 'UTF-8')
 	pathout1.write("# **甲组**\n")
 	readMatchList(sheetList[0], pathout1)
+	pathout1.write('>> **<p align="middle"> [返回赛程首页](time.html)&emsp;&emsp;&emsp;[返回主页](../../index.html) </p>**')
 	pathout2.write("# **乙组**\n")
 	readMatchList(sheetList[1], pathout2)
 	pathout3.write("# **丙组**\n")
